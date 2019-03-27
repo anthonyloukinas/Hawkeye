@@ -1,0 +1,38 @@
+{
+  "name": "docker-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anthony Loukinas <anthony.loukinas@redhat.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.5",
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^2.0.1",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "cookie-session": "^1.3.3",
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "filemanager-webpack-plugin": "^2.0.5",
+    "fs": "0.0.1-security",
+    "grunt": "^1.0.3",
+    "keygrip": "^1.0.3",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "patternfly": "^3.59.1",
+    "serve-favicon": "^2.5.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}

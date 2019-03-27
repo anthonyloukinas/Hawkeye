@@ -1,0 +1,26 @@
+.main-container {
+    margin: 15px;
+}
+
+/**
+ * Navigation Modifications
+ */
+.remove-secondary {
+    margin-bottom: 0px !important;
+}
+
+/**
+* Form Classes
+*/
+.form-40 {
+    width: 40%;
+}
+.form-60 {
+    width: 60%;
+}
+.form-80 {
+    width: 80%;
+}
+.form-center {
+    margin: 0 auto;
+}

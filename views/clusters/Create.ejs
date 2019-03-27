@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <%- include ../_layout/Resources.ejs %>
+        <link rel='stylesheet' href='/css/Main.css'>
+    </head>
+    <body>
+        <%- include ../_layout/Navigation.ejs %>
+        <div class="main-container">
+            <form method="POST" action="/clusters/create" id="create-cluster-form" role="form" class="form-60 form-center">
+                <h3>Details</h3>
+                <div class="form-group">
+                    <label class="control-label" for="cluster-name">* Name</label>
+                    <input name="cluster-name" type="text" id="cluster-name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="cluster-platform">Platform</label>
+                    <select name="cluster-platform" class="form-control" id="cluster-platform">
+                        <option disabled>Amazon Web Services</option>
+                        <option disabled>Google Cloud</option>
+                        <option disabled>Azure Cloud</option>
+                        <option disabled>OpenStack</option>
+                        <option default>Self Hosted</option>
+                    </select>
+                </div>
+
+                <hr />
+
+                <h3>Metadata</h3>
+                <div class="form-group">
+                    <label class="control-label" for="cluster-meta-region">Region</label>
+                    <input name="cluster-meta-region" type="text" id="cluster-meta-region" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="cluster-meta-datacenter">Datacenter</label>
+                    <input name="cluster-meta-datacenter" type="text" id="cluster-meta-datacenter" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="cluster-meta-environment">Environment</label>
+                    <select name="cluster-meta-environment" class="form-control" id="cluster-platform">
+                        <option>Production</option>
+                        <option>Staging</option>
+                        <option>Development</option>
+                        <option>Disaster Recovery</option>
+                    </select>
+                </div>
+                <button class="btn btn-success">Create Cluster</button>
+            </form>
+        </div>
+    </body>
+    <script src="/js/clusters/create.js"></script>
+</html>
