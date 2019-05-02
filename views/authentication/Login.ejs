@@ -1,63 +1,35 @@
-<html class="login-pf">
-    <head>
-        <%- include ../_layout/Resources.ejs %>
-        <link rel="stylesheet" href="/css/Login.css" media="screen, print">
-    </head>
-    <body class="login-pf">
-    <div class="login-pf-page">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                    <header class="login-pf-page-header">
-                        <img class="login-pf-brand" src="/images/Logo_Horizontal_Reversed.svg" alt="PatternFly logo" />
-                        <p>
-                            This is placeholder text, only. Use this area to place any information or introductory message about your application that may be relevant for users.
-                        </p>
-                    </header>
-                    <div class="row">
-                        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                            <div class="card-pf">
-                                <header class="login-pf-header">
-                                    <select class="selectpicker">
-                                        <option>English</option>
-                                        <option>French</option>
-                                        <option>Italian</option>
-                                    </select>
-                                    <h1>Log In to Your Account</h1>
-                                </header>
-                                <form method="POST" action="/auth/login">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="accountIdentifier">Account Identifier</label>
-                                        <input type="text" class="form-control  input-lg" id="accountIdentifier" name="username" placeholder="Account Identifier">
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only"  for="accountPassword">Password
-                                        </label>
-                                        <input type="password" class="form-control input-lg" id="accountPassword" name="password" placeholder="Password">
-                                    </div>
-                                    <div class="form-group login-pf-settings">
-                                        <label class="checkbox-label">
-                                            <input type="checkbox"> Keep me logged in for 30 days
-                                        </label>
-                                        <a href="#">Forgot password?</a>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-block btn-lg">Log In</button>
-                                </form>
-                                <p class="login-pf-signup">Need an account?<a href="#">Sign up</a></p>
-                            </div><!-- card -->
+<html lang="en">
 
-                            <footer class="login-pf-page-footer">
-                                <ul class="login-pf-page-footer-links list-unstyled">
-                                    <li><a class="login-pf-page-footer-link" href="#">Terms of Use</a></li>
-                                    <li><a class="login-pf-page-footer-link" href="#">Help</a></li>
-                                    <li><a class="login-pf-page-footer-link" href="#">Privacy Policy</a></li>
-                                </ul>
-                            </footer>
-                        </div><!-- col -->
-                    </div><!-- row -->
-                </div><!-- col -->
-            </div><!-- row -->
-        </div><!-- container -->
-    </div><!-- login-pf-page -->
-    </body>
+<head>
+  <title>Login - Hawkeye</title>
+  <%- include ../_layout/Resources.ejs %>
+  <link rel="stylesheet" href="/css/Authentication.css" />
+</head>
+
+<body>
+  <!-- show any messages that come back with authentication -->
+  <div class="login-messages text-center">
+  </div>
+  <div class="login-body">
+    <!-- <img class="logo" src="/images/Hawkeye_logo.png" width="250" height="190" alt="" /> -->
+    <div class="logo">
+      <h3>Hawkeye</h3>
+    </div>
+    <form class="auth-form" action="/auth/login" method="POST">
+      <legend>Login</legend>
+      <input type="text" id="username" name="username" placeholder="Email" onfocus="this.placeholder=''"
+        onblur="this.placeholder='Email'">
+      <input type="password" id="password" name="password" placeholder="Password" onfocus="this.placeholder=''"
+        onblur="this.placeholder='Password'">
+      <input type="submit" name="submit" value="Login">
+    </form>
+    <div class="footer">
+      <p>
+        Don't have an account?
+        <a href="/auth/signup">Sign Up</a>
+      </p>
+    </div>
+  </div>
+</body>
+
 </html>
