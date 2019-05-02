@@ -32,6 +32,17 @@ You can develop locally, or through openshift.io/eclipse che environments. The o
 is that you have Node v11.0 or higher. This application will likely work completely with the LTS 10.0
 release but I've yet to test it.
 
+**Database**
+
+You will need a MongoDB instance to connect to. We recommend using Docker if possible.
+
+```bash
+# Start MongoDB container
+$ docker run -p 27017:27017 --name=hawkeye-nosql -d mongo:latest
+```
+
+**Application**
+
 ```bash
 # Clone the code to your local machine
 $ git clone https://github.com/anthonyloukinas/hawkeye.git
