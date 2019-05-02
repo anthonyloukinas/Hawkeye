@@ -1,0 +1,33 @@
+# docker-compose.yml
+# This compose file is work in progress. 
+
+version: '3'
+services:
+  # Frontend App Container - Used for deploying docker applications to your cluster
+  frontend:
+    image: aloukinas/hawkeye:latest
+    ports:
+      - 80:3001
+    
+  # Mongo Container - Used for accounts
+  nosql:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - hawkeye_nosql:/data/db
+
+  # MySQL Container - Used for settings
+  sql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - hawkeye_sql:/var/lib/sql
+
+volumes:
+  hawkeye_nosql:
+  hawkeye_sql:
+
+networks:
+  hawk-net:
