@@ -18,7 +18,7 @@ const requireLogin = passport.authenticate(
     ['local-login'], {
         successRedirect: '/',
         failureRedirect: '/auth/login',
-        failureFlash: false
+        failureFlash: true
     }
 );
 
