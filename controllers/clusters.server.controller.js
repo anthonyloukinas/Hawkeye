@@ -10,7 +10,7 @@
  * @param res - Express Response
  */
 exports.getIndex = (req, res) => {
-    res.render('Index', { page_name: 'clusters'});
+    res.render('Index', { nav_dir: 'clusters'});
 };
 
 /**
@@ -19,7 +19,7 @@ exports.getIndex = (req, res) => {
  * @param res - Express Response
  */
 exports.getCreate = (req, res) => {
-    res.render('clusters/Create', { page_name: 'clusters'});
+    res.render('clusters/Create', { nav_dir: 'clusters'});
 };
 
 /**

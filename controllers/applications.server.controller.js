@@ -5,10 +5,10 @@
  */
 
 /**
- * Handles logic for "/clusters".
+ * Handles logic for "/applications".
  * @param req - Express Request
  * @param res - Express Response
  */
 exports.getIndex = (req, res) => {
-    res.render('Index', { page_name: 'applications'});
+    res.render('Index', { nav_dir: 'applications'});
 };

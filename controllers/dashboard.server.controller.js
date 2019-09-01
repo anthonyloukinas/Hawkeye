@@ -11,6 +11,6 @@
  */
 exports.getIndex = (req, res) => {
 
-    res.render('Index', { page_name: 'dashboard'});
+    res.render('Index', { nav_dir: 'dashboard'});
 
 };

@@ -10,7 +10,7 @@
  * @param res - Express Response
  */
 exports.getLogin = (req, res) => {
-    res.render('authentication/Login', { page_name: 'login'});
+    res.render('authentication/Login', { nav_dir: 'login'});
 };
 
 exports.postLogin = (req, res) => {
