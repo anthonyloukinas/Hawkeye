@@ -1,0 +1,18 @@
+/hosts/create
+
+-- What are we going to ask the end user, in order to generate a docker run statement
+-- which will connect our slave node to the master node.
+
+# Critical
+node name:
+node primary ip address:
+node api port:
+  
+# Would be nice
+datacenter (default: default):
+
+# Phase 2
+join cluster?: 
+create cluster?:
+
+external logging solution?: 
