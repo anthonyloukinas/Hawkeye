@@ -5,22 +5,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li <% if(nav_dir === 'dashboard') { %>class='active'<% } %>>
         <a class="nav-link" href="/dashboard"><span class="fas fa-tachometer-alt"></span> Dashboard</a>
       </li>
-      <li class="nav-item">
+      <li <% if(nav_dir === 'applications') { %>class='active'<% } %>>
         <a class="nav-link" href="/applications"><span class="fa fa-cubes"></span> Applications</a>
       </li>
-      <li class="nav-item">
+      <li <% if(nav_dir === 'clusters') { %>class='active'<% } %>>
         <a class="nav-link" href="/clusters"><span class="pficon-cluster"></span> Clusters</a>
       </li>
-      <li class="nav-item">
+      <li <% if(nav_dir === 'hosts') { %>class='active'<% } %>>
         <a class="nav-link" href="/hosts"><span class="pficon-container-node"></span> Hosts</a>
       </li>
-      <li class="nav-item">
+      <li <% if(nav_dir === 'storage') { %>class='active'<% } %>>
         <a class="nav-link" href="/storage"><span class="pficon-volume"></span> Storage</a>
       </li>
-      <li class="nav-item">
+      <li <% if(nav_dir === 'admin') { %>class='active'<% } %>>
         <a class="nav-link" href="/admin"><span class="fas fa-cogs"></span> Admin</a>
       </li>
     </ul>
@@ -34,96 +34,3 @@
     </ul>
   </div>
 </nav>
-
-
-<!-- nav -->
-  <div class="collapse navbar-collapse navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-utility">
-      <li>
-        <a href="#">Status</a>
-      </li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <span class="pficon pficon-user"></span>
-          <%= user.name %> <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a href="#">Settings</a>
-          </li>
-          <li>
-            <a href="#">Another link</a>
-          </li>
-          <li>
-            <a href="#">Something else here</a>
-          </li>
-          <li class="divider"></li>
-          <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">More options</a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="#">Link</a>
-              </li>
-              <li>
-                <a href="#">Another link</a>
-              </li>
-              <li>
-                <a href="#">Something else here</a>
-              </li>
-              <li class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li>
-                <a href="#">Separated link</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="#">One more separated link</a>
-              </li>
-            </ul>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="/auth/logout">Logout</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-primary persistent-secondary">
-      <li <% if(page_name === 'dashboard') { %>class='active'<% } %> >
-        <a href="/"><span class="fa fa-tachometer"></span> Dashboard</a>
-        <ul class="nav navbar-nav navbar-persistent">
-          <li>
-            <a href="/dashboard/status">Status</a>
-          </li>
-          <li>
-            <a href="/dashboard/events">Events</a>
-          </li>
-        </ul>
-      </li>
-      <li <% if(page_name === 'applications') { %>class='active'<% } %>>
-        <a href="/applications"><span class="fa fa-cubes"></span> Applications</a>
-        <ul class="nav navbar-nav navbar-persistent">
-          <li>
-            <a href="/applications/deploy">Deploy</a>
-          </li>
-        </ul>
-      </li>
-      <li <% if(page_name === 'clusters') { %>class='active'<% } %>>
-        <a href="/clusters"><span class="pficon-cluster"></span> Clusters</a>
-        <ul class="nav navbar-nav navbar-persistent">
-            <li>
-              <a href="/clusters/create">Create</a>
-            </li>
-        </ul>
-      </li>
-      <li>
-        <a href="/hosts"><span class="pficon-container-node"></span> Hosts</a>
-      </li>
-      <li>
-        <a href="/storage"><span class="pficon-volume"></span> Storage</a>
-      </li>
-      <li>
-        <a href="/admin"><span class="pficon-settings"></span> Admin</a>
-      </li>
-    </ul>
-  </div>

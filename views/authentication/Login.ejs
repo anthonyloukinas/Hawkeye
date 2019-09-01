@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="/css/Authentication.css" />
 </head>
 
-<body>
+<body class="login">
   <!-- show any messages that come back with authentication -->
   <div class="login-messages text-center">
     <%- messages('./_layout/Message', locals) %>
@@ -14,7 +14,7 @@
   <div class="login-body">
     <!-- <img class="logo" src="/images/Hawkeye_logo.png" width="250" height="190" alt="" /> -->
     <div class="logo">
-      <h3>Hawkeye</h3>
+      <h2>Hawkeye</h2>
     </div>
     <form class="auth-form" action="/auth/login" method="POST">
       <legend>Login</legend>
@@ -22,12 +22,12 @@
         onblur="this.placeholder='Email'">
       <input type="password" id="password" name="password" placeholder="Password" onfocus="this.placeholder=''"
         onblur="this.placeholder='Password'">
-      <input type="submit" name="submit" value="Login">
+      <input type="submit" name="submit" value="Sign In">
     </form>
-    <div class="footer">
+    <div class="footer login-footer">
       <p>
         Don't have an account?
-        <a href="/auth/signup">Sign Up</a>
+        <b><u><a href="/auth/signup">Create one now</a></u></b>
       </p>
     </div>
   </div>

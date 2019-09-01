@@ -1,7 +1,14 @@
+.login {
+    background: #207CFF;
+    color: #FFFFFF;
+}
+
 .login-body .logo {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
     display: block;
 }
 .login-body .footer {
@@ -9,13 +16,22 @@
     color: #333;
     margin: 20px auto;
 }
+
+.login-footer p, a {
+    color: #FFFFFF;
+}
+
+.login-footer a:hover {
+    color: #EEEAEA;
+}
+
 .auth-form {
     margin: 0 auto;
     width: 470px;
     border-radius: 3px;
     background: #fff;
     padding: 40px;
-    box-shadow: 0 0 2px 2px rgba(0,0,0,.3);
+    /* box-shadow: 0 0 2px 2px rgba(0,0,0,.3); */
 }
 .auth-form legend {
     text-align: center;
@@ -36,6 +52,7 @@
     display: block;
     border-radius: 3px;
     font-size: 16px;
+    opacity: .8;
     transition: opacity 0.4s;
     text-align: left;
     height: auto;
