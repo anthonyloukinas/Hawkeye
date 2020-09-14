@@ -11,4 +11,3 @@ dwh-compute3 ansible_host=172.16.0.119
 
 [all:vars]
 ansible_user=root
-ansible_password="Nothing01!"
