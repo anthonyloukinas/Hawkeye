@@ -1,0 +1,41 @@
+---
+# docker network create traefik-proxy --driver=overlay
+
+version: '3.7'
+
+services:
+    proxy:
+        image: traefik:v2.2
+        command: 
+            - --api.insecure=true # set to 'false' on production
+            - --api.dashboard=true
+            - --api.debug=true
+            - --log.level=DEBUG
+            - --providers.docker=true
+            - --providers.docker.swarmMode=true
+            - --providers.docker.exposedbydefault=false
+            - --providers.docker.network=proxy
+            - --entrypoints.web.address=:80
+            - --entrypoints.web-secured.address=:443
+        ports:
+            - "80:80"
+            - "443:443"
+            - "8080:8080" # traefik dashboard
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+            - traefik-proxy
+        deploy:
+            restart_policy:
+                delay: 10s
+                max_attempts: 10
+                window: 60s
+            replicas: 1
+            labels:
+                - traefik.enable=true
+                - traefik.http.routers.api.service=api@internal
+                - traefik.http.services.proxy.loadbalancer.server.port=8080
+
+networks:
+    traefik-proxy:
+        external: true

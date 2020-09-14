@@ -1,0 +1,48 @@
+# database-compose.yml
+# Usage: docker-compose -f database-compose.yml up -d
+# Author: Anthony Loukinas <anthony.loukinas@redhat.com>
+
+version: '3'
+services:
+  # MongoDB
+  hawkeye_mongo:
+    image: mongo
+    hostname: hawkeye_mongo
+    networks:
+      - hawkeye_net
+    ports:
+      - 27017:27017
+    volumes:
+      - hawkeye_mongo_data:/data/db
+
+  # MySQL
+  hawkeye_mysql:
+    image: mysql:5.7
+    hostname: hawkeye_mysql
+    networks:
+      - hawkeye_net
+    ports:
+      - 3306:3306
+    volumes:
+      - hawkeye_mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      
+  hawkeye_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    hostname: hawkeye_phpmyadmin
+    networks:
+      - hawkeye_net
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: hawkeye_mysql
+
+networks:
+  hawkeye_net:
+
+volumes:
+  hawkeye_mongo_data:
+    external: false
+  hawkeye_mysql_data:
+    external: false

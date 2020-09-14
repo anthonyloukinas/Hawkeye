@@ -1,0 +1,22 @@
+---
+# @author Anthony Loukinas <anthony.loukinas@gmail.com>
+
+- hosts: all
+  gather_facts: no
+  become: yes
+  vars:
+    gfs_cluster_addr: "172.16.0.114"
+    gfs_volume_name: "volume1"
+  tasks:
+    
+    - name: Unmount glusterfs volume
+      mount:
+        path: "/glusterfs/{{ gfs_volume_name }}"
+        state: absent
+
+    - name: Mount failover glusterfs volume
+      mount:
+        path: "/glusterfs/{{ gfs_volume_name }}"
+        src: "{{ gfs_cluster_addr }}:{{ gfs_volume_name }}"
+        fstype: glusterfs
+        state: mounted

@@ -1,0 +1,16 @@
+---
+# @author Anthony Loukinas <anthony.loukinas@gmail.com>
+
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+
+    - name: Add ssh authorized key
+      authorized_key:
+        user: "{{ item }}"
+        state: present
+        key: "{{ lookup('file', '/home/aloukinas/.ssh/id_rsa.pub') }}"
+      with_items:
+        - root
+        - aloukina

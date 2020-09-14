@@ -1,0 +1,31 @@
+---
+# @author Anthony Loukinas <anthony.loukinas@gmail.com>
+
+- hosts: all
+  gather_facts: no
+  become: yes
+  vars:
+    gfs_cluster_addr: "172.16.0.112"
+    gfs_volume_name: "volume1"
+  tasks:
+
+    - name: Add PPA
+      apt_repository:
+        repo: ppa:gluster/glusterfs-7
+
+    - name: Install glusterfs client package
+      apt:
+        name: glusterfs-client
+        state: present
+
+    - name: Create volume directory
+      file:
+        path: "/glusterfs/{{ gfs_volume_name }}"
+        state: directory
+
+    - name: Mount glusterfs volume
+      mount:
+        path: "/glusterfs/{{ gfs_volume_name }}"
+        src: "{{ gfs_cluster_addr }}:{{ gfs_volume_name }}"
+        fstype: glusterfs
+        state: mounted

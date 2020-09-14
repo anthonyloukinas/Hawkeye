@@ -1,0 +1,14 @@
+[storage]
+dwh-storage1 ansible_host=172.16.0.112
+dwh-storage2 ansible_host=172.16.0.114
+dwh-storage3 ansible_host=172.16.0.115
+dwh-storage4 ansible_host=172.16.0.116
+
+[compute]
+dwh-compute1 ansible_host=172.16.0.117
+dwh-compute2 ansible_host=172.16.0.118
+dwh-compute3 ansible_host=172.16.0.119
+
+[all:vars]
+ansible_user=root
+ansible_password="Nothing01!"

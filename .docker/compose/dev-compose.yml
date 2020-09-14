@@ -1,0 +1,23 @@
+
+version: '3'
+services:
+  hawkeyeapi:
+    image: aloukinas/hawkeye-api
+    ports:
+      - 6000:5000
+    networks:
+      - hawkeye_net
+
+  hawkeyeslaveapi:
+    image: aloukinas/hawkeye-slave-api
+    ports:
+      - 5000:5000
+    networks:
+      - hawkeye_net
+    environment:
+      MASTER_URL: http://hawkeyeapi
+      MASTER_PORT: 6000
+      SLAVE_UUID: 123
+
+networks:
+  hawkeye_net:
