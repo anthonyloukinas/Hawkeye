@@ -12,5 +12,6 @@
  * @param res - Express Response
  */
 exports.getIndex = (req, res) => {
-    res.render('Index', { nav_dir: 'dashboard'});
+    console.log(req.user);
+    res.render('Index', { nav_dir: 'dashboard', user: req.user });
 };

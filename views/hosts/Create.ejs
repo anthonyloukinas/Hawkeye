@@ -10,6 +10,11 @@
 <body>
   <%- include ../_layout/Navigation.ejs %>
   <div class="main-container">
+    <% if(hosts) { %>
+      <% for(host in hosts) { %>
+        <%= host.name %>3
+      <% } %>
+    <% } %>
     <div class="row row-cards-pf">
       <div class="col-xs-6 col-sm-4 col-md-4">
         <form>

@@ -17,11 +17,11 @@ const mongoose = require('mongoose'),
 let accountSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: false
     },
     lastName: {
         type: String,
-        required: true
+        required: false
     },
     uid: {
         type: String,
@@ -46,6 +46,7 @@ let accountSchema = new Schema({
 });
 
 accountSchema.methods.validPassword = function(password) {
+    console.log(bcrypt.hashSync(password, 12));
     return bcrypt.compareSync(password, this.accounts.local.password);
 };
 

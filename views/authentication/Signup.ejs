@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+  <title>Signup - Hawkeye</title>
+  <%- include ../_layout/Resources.ejs %>
+  <link rel="stylesheet" href="/css/Authentication.css" />
+</head>
+
+<body class="login">
+    <!-- show any messages that come back with authentication -->
+    <div class="login-messages text-center">
+        <%- messages('./_layout/Message', locals) %>
+    </div>
+    
+    <div class="login-body">
+        <!-- <img class="logo" src="/images/Hawkeye_logo.png" width="250" height="190" alt="" /> -->
+        <div class="logo">
+            <h2>Hawkeye</h2>
+        </div> <!-- logo -->
+
+        <form class="auth-form" action="/auth/signup" method="POST">
+            <legend>Sign Up</legend>
+
+            <input type="text" id="username" name="username" placeholder="Email" onfocus="this.placeholder=''"
+                onblur="this.placeholder='Email'">
+
+            <input type="password" id="password" name="password" placeholder="Password" onfocus="this.placeholder=''"
+                onblur="this.placeholder='Password'">
+
+            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" onfocus="this.placeholder=''"
+                onblur="this.placeholder='Confirm Password'">
+
+            <input type="submit" name="submit" value="Sign Up">
+        </form>
+
+        <div class="footer login-footer">
+            <p>
+                Already have an account?
+                <b><u><a href="/auth/login">Sign in now</a></u></b>
+            </p>
+        </div> <!-- login-footer -->
+    </div> <!-- login-body -->
+</body>
+
+</html>

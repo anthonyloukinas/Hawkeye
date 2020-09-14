@@ -9,7 +9,7 @@
   "author": "Anthony Loukinas <anthony.loukinas@redhat.com>",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.2",
     "clean-webpack-plugin": "^2.0.1",
@@ -28,6 +28,7 @@
     "lodash": "^4.17.15",
     "mongoose": "^5.4.19",
     "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",

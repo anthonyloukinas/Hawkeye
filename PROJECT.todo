@@ -1,0 +1,12 @@
+Hawkeye:
+  General:
+    ☐ Port all Frontend Node.js work, to API
+    The reason we want to do this, 
+
+  Authentication:
+
+    Do we want to 
+    ☐ Allow for multiple authentication types @low @est(3h)
+    LDAP: 
+      ☐ Add LDAP Authentication Support @high @est(2h)
+      ☐ Create configurable LDAP authentication @high @est(1h)

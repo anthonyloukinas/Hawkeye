@@ -1,2 +1,9 @@
+
+# Node.js
 node_modules/
+
+# MAC OS
 .DS_STORE
+
+# Code editors
+.vscode/

@@ -32,6 +32,10 @@ module.exports = function(app){
         .get(Authentication.getLogin)
         .post(requireLogin, Authentication.postLogin);
 
+    app.route('/auth/signup')
+        .get(Authentication.getSignup)
+        .post(Authentication.postSignup);
+
     app.route('/auth/logout')
         .get(Authentication.getLogout);
 
